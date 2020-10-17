@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">1x Deposit</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="payment_method">
+        <item>Bkash</item>
+        <item>Rocket</item>
+        <item>Nagad</item>
+    </string-array>
+
+    <string-array name="currency">
+        <item>BDT</item>
+        <item>USD</item>
+    </string-array>
+
+    <string-array name="fundType">
+        <item>BDT</item>
+        <item>USD</item>
+        <item>USD/BDT</item>
+        <item>NoFund</item>
+
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

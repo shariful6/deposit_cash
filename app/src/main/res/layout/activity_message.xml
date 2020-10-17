@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".MessageActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/messageET"
+            android:layout_width="339dp"
+            android:layout_height="50dp"
+            android:background="#F8F6F6"
+            android:hint="Type Message"
+            android:inputType="textMultiLine"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:id="@+id/send_messageBtn"
+            android:background="#fff"
+            android:src="@drawable/ic_send_voilet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

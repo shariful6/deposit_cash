@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "900709676394",
+    "firebase_url": "https://x-deposit.firebaseio.com",
+    "project_id": "x-deposit",
+    "storage_bucket": "x-deposit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900709676394:android:d3e2f59afd22eec9cb6113",
+        "android_client_info": {
+          "package_name": "com.shariful.a1xdeposit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900709676394-31ossjgnchkvhhaud5c936o8oltjmdiq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shariful.a1xdeposit",
+            "certificate_hash": "f0b9780c83619d059f16b866659e72f5ee6023ff"
+          }
+        },
+        {
+          "client_id": "900709676394-n21gog3n8r534pi2hollm5rf3sleafnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFRdQOCPcIQLE4gTfap6MwfhBkN4cXfiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900709676394-n21gog3n8r534pi2hollm5rf3sleafnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

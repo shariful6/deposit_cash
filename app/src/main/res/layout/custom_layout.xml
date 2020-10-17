@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/userIdTV_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User ID: "
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:padding="5dp" />
+
+            <ImageButton
+                android:id="@+id/moreBtnID"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:background="#FFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/amountTvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount: "
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/currencyTypeTVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currency Type: "
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+
+
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/paymentMethodTvID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Method: "
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:padding="5dp" />
+
+            <Button
+                android:id="@+id/okBtnID"
+                android:layout_alignParentEnd="true"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_shape"
+                android:text="Ok"
+               android:textStyle="bold"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/phoneTvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone: "
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/transactionTvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaction Id: "
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <TextView
+               android:layout_marginLeft="100dp"
+            android:text="Status: "
+            android:textSize="20dp"
+            android:textColor="#5E35B1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/statusTVID"
+                android:text="Pending"
+                android:textSize="20dp"
+                android:textColor="#D81B60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

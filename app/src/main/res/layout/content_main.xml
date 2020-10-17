@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#F5F0F0"
+    tools:showIn="@layout/activity_main">
+
+   <RelativeLayout
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_gravity="center"
+           android:textColor="#000"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:text="Notice Board"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+
+       <TextView
+           android:id="@+id/online_offlineTvID"
+           android:textColor="#000"
+           android:textStyle="bold"
+           android:textSize="20sp"
+           android:layout_alignParentEnd="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true" />
+
+   </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/noticeTV_Id"
+        android:padding="5dp"
+        android:text="Notice"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:background="#C0CA33"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="Payment Method"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <Button
+            android:id="@+id/coppyBtnID"
+            android:background="@drawable/bkash"
+            android:layout_marginLeft="90dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:id="@+id/rocketBtnID"
+            android:background="@drawable/rocket"
+            android:layout_marginLeft="15dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:id="@+id/nagatBtnID"
+            android:background="@drawable/nagat"
+            android:layout_marginLeft="15dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/availableTV_id"
+        android:layout_marginTop="10dp"
+        android:text="Available: BDT/USD"
+        android:textColor="#D81B60"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/depositBtnID"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/edit_shape"
+        android:text="Deposit"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:textColor="#000" />
+
+
+    <Button
+        android:id="@+id/withdrawtBtnID"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/edit_shape"
+        android:text="Withdraw"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:textColor="#000" />
+
+
+
+</LinearLayout>

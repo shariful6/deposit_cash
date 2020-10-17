@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrationActivity">
+
+    <EditText
+        android:id="@+id/nameID"
+        android:layout_width="351dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/edit_shape"
+        android:hint="Your Name"
+        android:textColor="#000"
+        />
+    <EditText
+        android:id="@+id/mobileID"
+        android:layout_width="351dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:background="@drawable/edit_shape"
+        android:hint="Mobile Number"
+        android:textColor="#000"
+        />
+    <EditText
+        android:id="@+id/emailID_signUp"
+        android:layout_width="351dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@drawable/edit_shape"
+        android:hint="Email"
+        android:textColor="#000"
+        />
+
+    <EditText
+        android:id="@+id/passID_signUp"
+        android:layout_width="351dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:hint="Password"
+        android:background="@drawable/edit_shape"
+        android:layout_gravity="center"
+        android:inputType="textPassword"
+        android:textColor="#000"
+        />
+
+    <Button
+        android:id="@+id/singUpBtnID"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:background="@drawable/edit_shape"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp" />
+    <ProgressBar
+        android:id="@+id/progressbarID"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

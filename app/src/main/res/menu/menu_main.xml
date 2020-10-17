@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shariful.a1xdeposit.MainActivity">
+
+    <item
+        android:id="@+id/admin_panelID"
+        android:orderInCategory="100"
+        android:title="Admin Panel"
+        app:showAsAction="never" />
+</menu>

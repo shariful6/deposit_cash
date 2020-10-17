@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="#039BE5"
+    tools:context=".AdminActivity">
+
+
+    <Button
+        android:id="@+id/depositListBtnID"
+        android:text="Deposit List"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/withdrawListBtnID"
+        android:text="Withdraw List"
+        android:textAllCaps="false"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/noticeET_id"
+        android:hint="Type Your New Notice Here"
+        android:inputType="textMultiLine"
+        android:textColor="#000"
+        android:background="@drawable/edit_shape"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <Button
+        android:id="@+id/publishNoticeBtnID"
+        android:text="Publish Notice"
+        android:textAllCaps="false"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_shape"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/phoneChangeET_ID"
+            android:layout_width="215dp"
+            android:layout_height="38dp"
+            android:background="@drawable/edit_shape"
+            android:hint="Bkash Number"
+            android:padding="5dp"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/phoneChangeBtnID"
+            android:text="Change"
+            android:textAllCaps="false"
+            android:background="@drawable/edit_shape"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/rockeChangetET_ID"
+            android:layout_width="215dp"
+            android:layout_height="38dp"
+            android:background="@drawable/edit_shape"
+            android:hint="Rocket Number"
+            android:padding="5dp"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/rocketChangBtnID"
+            android:text="Change"
+            android:textAllCaps="false"
+            android:background="@drawable/edit_shape"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/nagatChangeET_ID"
+            android:layout_width="215dp"
+            android:layout_height="38dp"
+            android:background="@drawable/edit_shape"
+            android:hint="Nagat Number"
+            android:padding="5dp"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/nagatChangeBtnID"
+            android:text="Change"
+            android:textAllCaps="false"
+            android:background="@drawable/edit_shape"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/fundSpinnerID"
+            android:layout_marginStart="10dp"
+            android:layout_width="145dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp" />
+
+        <Button
+            android:id="@+id/fundChangeBtnID"
+            android:layout_width="172dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edit_shape"
+            android:text="Change Fund Type"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/trET_ID"
+            android:layout_marginTop="5dp"
+            android:hint="Transaction Id"
+            android:gravity="center"
+            android:textColor="#000"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_shape" />
+
+        <Button
+            android:id="@+id/storeBtnID"
+            android:textAllCaps="false"
+            android:text="Store"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_shape" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/inboxBtnID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/edit_shape"
+        android:drawableLeft="@drawable/ic_message_black_24dp"
+        android:padding="10dp"
+        android:text="Message Inbox"
+        android:textAllCaps="false"
+        android:textSize="30dp" />
+
+
+
+</LinearLayout>
