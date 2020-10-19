@@ -1,6 +1,7 @@
 package com.shariful.a1xdeposit.Client;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.shariful.a1xdeposit.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 
 public class AdapterClientWithdraw extends RecyclerView.Adapter<AdapterClientWithdraw.MyViewHolder> {
@@ -42,6 +45,11 @@ public class AdapterClientWithdraw extends RecyclerView.Adapter<AdapterClientWit
     public void onBindViewHolder(AdapterClientWithdraw.MyViewHolder holder, int position) {
 
         final String pId =withdrawList2.get(position).getpId();
+
+        Calendar calendar = Calendar.getInstance(Locale.getDefault());
+        calendar.setTimeInMillis(Long.parseLong(pId));
+        String pTime = (String) DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
+
         final String uid= withdrawList2.get(position).getMyUid();
         //get data
         String userId =withdrawList2.get(position).getUserId();
@@ -60,6 +68,8 @@ public class AdapterClientWithdraw extends RecyclerView.Adapter<AdapterClientWit
         holder.currencyTypeTv.setText("Currency Type: "+currencyType);
         holder.phoneTv.setText("Phone: "+phone);
         holder.statusTv.setText(status);
+        holder.dateTv.setText(pTime);
+
 
         holder.deleteItemBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -112,7 +122,7 @@ public class AdapterClientWithdraw extends RecyclerView.Adapter<AdapterClientWit
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView userIdTV,codeTv,ammountTv,currencyTypeTv,paymentMethodTv,phoneTv,statusTv;
+        TextView userIdTV,codeTv,ammountTv,currencyTypeTv,paymentMethodTv,phoneTv,statusTv,dateTv;
         ImageButton deleteItemBtn;
 
         public MyViewHolder(View itemView) {
@@ -126,6 +136,7 @@ public class AdapterClientWithdraw extends RecyclerView.Adapter<AdapterClientWit
             phoneTv = itemView.findViewById(R.id.phone_w2);
             deleteItemBtn =itemView.findViewById(R.id.deleteBtnId_w2);
             statusTv = itemView.findViewById(R.id.statusTVID);
+            dateTv = itemView.findViewById(R.id.date2);
 
         }
     }

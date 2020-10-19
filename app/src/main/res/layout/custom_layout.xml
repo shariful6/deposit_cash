@@ -38,15 +38,31 @@
         </RelativeLayout>
 
 
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/amountTvID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: "
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:padding="5dp"/>
 
-        <TextView
-            android:id="@+id/amountTvID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amount: "
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:padding="5dp"/>
+            <TextView
+                android:id="@+id/dateTvID"
+                android:text="date time"
+                android:textColor="#000"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
 
         <TextView
             android:id="@+id/currencyTypeTVID"
@@ -102,6 +118,7 @@
             android:textColor="#000"
             android:textSize="20sp"
             android:padding="5dp"/>
+
 
         <LinearLayout
             android:orientation="horizontal"

@@ -47,6 +47,7 @@ public class MessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+        this.setTitle("Send Message");
 
         recyclerView =findViewById(R.id.recyclerView_Message);
         recyclerView.setHasFixedSize(true);
@@ -102,6 +103,9 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     private  void sendMessage(String sender,String receiver,String message){
+
+        String timeStamp = String.valueOf(System.currentTimeMillis());
+
         DatabaseReference reference =FirebaseDatabase.getInstance().getReference();
         HashMap<String,Object> hashMap =new HashMap<>();
 
@@ -109,6 +113,8 @@ public class MessageActivity extends AppCompatActivity {
         hashMap.put("receiver",receiver);
         hashMap.put("message",message);
         hashMap.put("uName",name); ////////////////////my name
+        hashMap.put("pId",timeStamp);
+
         reference.child("Chats").push().setValue(hashMap);
 
 

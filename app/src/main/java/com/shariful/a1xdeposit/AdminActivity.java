@@ -22,9 +22,9 @@ public class AdminActivity extends AppCompatActivity {
     String[] fundType;
     Spinner spinner_fund;
 
-    EditText noticeET,phoneET,transactionET,roketET,nagatET;
+    EditText noticeET,phoneET,transactionET,roketET,nagatET,pinET;
 
-    Button fundChangBtn,depositListBtn,withdrawListBtn,publish_noticeBtn,changeNoBtn,storeBtn,inboxBtn,roketCngBtn,nagatCngBtn;
+    Button fundChangBtn,depositListBtn,withdrawListBtn,publish_noticeBtn,changeNoBtn,storeBtn,inboxBtn,roketCngBtn,nagatCngBtn,pinChngBtn;
 
     String pushId;
     private FirebaseDatabase database;
@@ -35,6 +35,7 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+        setTitle("Admin");
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("User");
@@ -55,6 +56,8 @@ public class AdminActivity extends AppCompatActivity {
         inboxBtn =findViewById(R.id.inboxBtnID);
         roketET =findViewById(R.id.rockeChangetET_ID);
         nagatET = findViewById(R.id.nagatChangeET_ID);
+        pinET =findViewById(R.id.pinETID);
+        pinChngBtn =findViewById(R.id.pinChangeBtnID);
 
         roketCngBtn =findViewById(R.id.rocketChangBtnID);
         nagatCngBtn = findViewById(R.id.nagatChangeBtnID);
@@ -74,6 +77,26 @@ public class AdminActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        pinChngBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pin = pinET.getText().toString().trim();
+                DatabaseReference reference =FirebaseDatabase.getInstance().getReference("adminPin");
+                reference.setValue(pin).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(AdminActivity.this, "Pin Changed !", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AdminActivity.this, "Failed to Changed pin ...", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
         });
 
         storeBtn.setOnClickListener(new View.OnClickListener() {

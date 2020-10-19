@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
@@ -47,7 +48,7 @@
         android:id="@+id/tv_go_to_signUpId"
         android:layout_marginTop="10dp"
         android:textSize="17dp"
-        android:textColor="#000"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:text="Are You Not Registered ?? Sign Up Here"
@@ -55,11 +56,31 @@
 
     <ProgressBar
         android:id="@+id/progressbarID"
-        android:visibility="gone"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:visibility="gone" />
+    <TextView
+        android:layout_marginTop="30dp"
+        android:text="About Us."
+        android:textColor="#D81B60"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="1. Deposit and Withdraw within 1 minute.
+        \n2. New Account Offer 100% First Deposit Bonus.
+        \n3. Every Friday 100% Deposit Bonus, Birthday Bonus.
+        \n4. 1 Month 3 Month 6 Month 9 Month 1 Year Bonus.
+        \n5. Official Offer Promo Code: 1xbet24.
+        \n6. For any help, Live Chat With Us..."
+        android:textColor="#8E24AA"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>

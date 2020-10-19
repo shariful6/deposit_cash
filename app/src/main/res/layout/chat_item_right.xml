@@ -18,8 +18,6 @@
             android:visibility="gone"
             android:layout_height="wrap_content"/>
 
-
-
         <TextView
             android:layout_alignParentEnd="true"
             android:id="@+id/showMessageID"
@@ -31,6 +29,17 @@
             android:layout_height="wrap_content"
             android:background="@drawable/background_right"
             android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/timeTVID_message"
+            android:text="Date and time"
+            android:layout_below="@+id/showMessageID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20sp" />
 
     </RelativeLayout>
 

@@ -15,18 +15,29 @@
 
 
         <RelativeLayout
+            android:padding="5dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/userIdTV_ID2"
+                android:maxLength="17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="User ID: "
                 android:textColor="#000"
                 android:textSize="20sp"
-                android:padding="5dp" />
+                 />
+            <TextView
+                android:textSize="20sp"
+                android:text="**"
+                android:textColor="#000"
+                android:layout_toEndOf="@+id/userIdTV_ID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/userIdTV_ID2" />
+
             <ImageButton
                 android:id="@+id/moreBtnID2"
                 android:layout_alignParentEnd="true"
@@ -40,14 +51,30 @@
 
 
 
-        <TextView
-            android:id="@+id/amountTvID2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amount: "
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:padding="5dp"/>
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/amountTvID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: "
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/dateTvID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="date time"
+                android:textColor="#000" />
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/currencyTypeTVID2"

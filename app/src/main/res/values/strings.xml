@@ -2,6 +2,9 @@
     <string name="app_name">1x Deposit</string>
     <string name="action_settings">Settings</string>
 
+
+
+
     <string-array name="payment_method">
         <item>Bkash</item>
         <item>Rocket</item>
@@ -9,9 +12,18 @@
     </string-array>
 
     <string-array name="currency">
+        <item>USD</item>
         <item>BDT</item>
+    </string-array>
+
+
+    <string-array name="bdt_only">
+        <item>BDT</item>
+    </string-array>
+    <string-array name="usd_only">
         <item>USD</item>
     </string-array>
+
 
     <string-array name="fundType">
         <item>BDT</item>

@@ -1,6 +1,7 @@
 package com.shariful.a1xdeposit.Adapter;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.shariful.a1xdeposit.Chat;
 import com.shariful.a1xdeposit.R;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHolder> {
 
@@ -50,6 +53,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
          Chat chat = chatList.get(position);
          holder.showMessage.setText(chat.getMessage());
+
+         String pId= chatList.get(position).getpId();
+
+        Calendar calendar = Calendar.getInstance(Locale.getDefault());
+        calendar.setTimeInMillis(Long.parseLong(pId));
+        String pTime = (String) DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
+
+        holder.timeTV.setText(pTime);
+
     }
 
 
@@ -61,13 +73,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView showMessage;
+        TextView showMessage,timeTV;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             showMessage = itemView.findViewById(R.id.showMessageID);
+            timeTV = itemView.findViewById(R.id.timeTVID_message);
 
 
 

@@ -31,6 +31,8 @@ public class WithdrawListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_withdraw_list);
 
+        this.setTitle("Withdraw Here");
+
 
         recyclerView_withdraw =findViewById(R.id.recyclerView_withdrawID);
 

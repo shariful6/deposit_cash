@@ -1,20 +1,26 @@
 package com.shariful.a1xdeposit;
 
+import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shariful.a1xdeposit.Client.ClientDepoListActivity;
+import com.shariful.a1xdeposit.Client.ClientWithListActivity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -29,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     ClipboardManager clipboardManager;
 
-    Button depositBtn,withdrawBtn,coppyBtn,rocketBtn,nagatBtn;
-    TextView noticeTV,availableTV,adminNumberTv,statusTV;
+    Button depositBtn,withdrawBtn,coppyBtn,rocketBtn,nagatBtn,depositListBtn,withdrawListBtn;
+    TextView noticeTV,availableTV,statusTV;
 
     String aValue;
 
@@ -40,14 +46,20 @@ public class MainActivity extends AppCompatActivity {
 
      String rocketNum;
      String nagatNum;
+     String pin;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setTitle("Admin App");
+
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
 
@@ -62,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         coppyBtn =findViewById(R.id.coppyBtnID);
         rocketBtn =findViewById(R.id.rocketBtnID);
         nagatBtn =findViewById(R.id.nagatBtnID);
+        depositListBtn = findViewById(R.id.depositListBtnID);
+        withdrawListBtn = findViewById(R.id.withdrawListBtnID);
 
         statusTV =findViewById(R.id.online_offlineTvID);
 
@@ -105,6 +119,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        depositListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ClientDepoListActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         withdrawBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +135,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        withdrawListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ClientWithListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         retriveNotice();
         retrivePaymentNo();
@@ -293,6 +321,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -318,6 +347,33 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         }
+
+        if (id == R.id.shareID) {
+            Intent myIntent=new Intent(Intent.ACTION_SEND);
+            myIntent.setType("text/plain");
+            String body="http://play.google.com/store/apps/details?id=com.shariful.a1xdeposit";
+            myIntent.putExtra(Intent.EXTRA_TEXT,body);
+            startActivity(Intent.createChooser(myIntent,"Share Using"));
+            return true;
+        }
+        if (id == R.id.ratelID) {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=" + getPackageName())));
+            } catch (ActivityNotFoundException e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+
+            }
+
+            return true;
+        }
+        if (id == R.id.logoutID) {
+           Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+           startActivity(intent);
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

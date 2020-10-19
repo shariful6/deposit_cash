@@ -1,6 +1,7 @@
 package com.shariful.a1xdeposit.Client;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.shariful.a1xdeposit.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class AdapterClientDepo extends RecyclerView.Adapter<AdapterClientDepo.MyViewHolder> {
 
@@ -47,6 +50,10 @@ public class AdapterClientDepo extends RecyclerView.Adapter<AdapterClientDepo.My
         final String pId =depositList2.get(position).getpId();
         final String uid= depositList2.get(position).getMyUid();
 
+        Calendar calendar = Calendar.getInstance(Locale.getDefault());
+        calendar.setTimeInMillis(Long.parseLong(pId));
+        String pTime = (String) DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
+
         holder.userIdTV.setText("User Id: "+depositList2.get(position).getUserId());
         holder.amountTv.setText("Ammount: "+depositList2.get(position).getAmount());
         holder.currencyTypeTv.setText("Currency Type: "+depositList2.get(position).getCurrency_type());
@@ -54,6 +61,7 @@ public class AdapterClientDepo extends RecyclerView.Adapter<AdapterClientDepo.My
         holder.phoneTv.setText("Phone: "+depositList2.get(position).getPhone());
         holder.transactionIdTV.setText("Transaction Id: "+depositList2.get(position).getTransactionId());
         holder.statusTv.setText(""+depositList2.get(position).getStatus());
+        holder.dateTV.setText(pTime);
 
 
 
@@ -108,7 +116,7 @@ public class AdapterClientDepo extends RecyclerView.Adapter<AdapterClientDepo.My
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView userIdTV,amountTv,currencyTypeTv,paymentMethodTv,phoneTv,transactionIdTV,statusTv;
+        TextView userIdTV,amountTv,currencyTypeTv,paymentMethodTv,phoneTv,transactionIdTV,statusTv,dateTV;
         ImageButton moreBtn;
 
         public MyViewHolder(View itemView) {
@@ -122,6 +130,7 @@ public class AdapterClientDepo extends RecyclerView.Adapter<AdapterClientDepo.My
             transactionIdTV = itemView.findViewById(R.id.transactionTvID2);
             statusTv =itemView.findViewById(R.id.statusTVID2);
             moreBtn = itemView.findViewById(R.id.moreBtnID2);
+            dateTV = itemView.findViewById(R.id.dateTvID2);
 
         }
     }

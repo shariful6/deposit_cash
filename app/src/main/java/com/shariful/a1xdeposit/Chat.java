@@ -2,16 +2,17 @@ package com.shariful.a1xdeposit;
 
 public class Chat {
 
-    String message,receiver,sender,uName;
+    String message,receiver,sender,uName,pId;
 
     public Chat() {
     }
 
-    public Chat(String message, String receiver, String sender, String uName) {
+    public Chat(String message, String receiver, String sender, String uName, String pId) {
         this.message = message;
         this.receiver = receiver;
         this.sender = sender;
         this.uName = uName;
+        this.pId = pId;
     }
 
     public String getMessage() {
@@ -44,5 +45,13 @@ public class Chat {
 
     public void setuName(String uName) {
         this.uName = uName;
+    }
+
+    public String getpId() {
+        return pId;
+    }
+
+    public void setpId(String pId) {
+        this.pId = pId;
     }
 }

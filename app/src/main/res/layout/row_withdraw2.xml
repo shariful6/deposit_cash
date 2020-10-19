@@ -21,11 +21,23 @@
             <TextView
                 android:id="@+id/user_w2"
                 android:textSize="20dp"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
                 android:textColor="#000"
-                android:text="User Id"
-                android:layout_width="match_parent"
+                android:text="User Id: "
+                android:maxLength="17"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="**"
+                android:textColor="#000"
+                android:layout_toEndOf="@+id/user_w2"
+                android:textSize="20sp"
+                android:layout_marginLeft="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/user_w2" />
+
             <ImageButton
                 android:id="@+id/deleteBtnId_w2"
                 android:background="#fff"
@@ -38,8 +50,6 @@
 
         </RelativeLayout>
 
-
-
         <TextView
             android:id="@+id/code_w2"
             android:textSize="20dp"
@@ -48,14 +58,32 @@
             android:text="Code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/amount_w2"
-            android:textSize="20dp"
-            android:textColor="#000"
-            android:layout_margin="10dp"
-            android:text="Ammount"
+
+        <RelativeLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/amount_w2"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:layout_margin="10dp"
+                android:text="Ammount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="date time"
+                android:textColor="#000" />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/currencyType_w2"
             android:textSize="20dp"
@@ -73,14 +101,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/phone_w2"
-            android:textSize="20dp"
-            android:textColor="#000"
-            android:layout_margin="10dp"
-            android:text="Phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
+              <LinearLayout
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                  <TextView
+                      android:id="@+id/phone_w2"
+                      android:textSize="20dp"
+                      android:textColor="#000"
+                      android:layout_marginLeft="10dp"
+                      android:text="Phone"
+                      android:maxLength="15"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+                  <TextView
+                      android:text="***"
+                      android:textColor="#000"
+                      android:layout_marginLeft="2dp"
+                      android:layout_gravity="center"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+
+
+              </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"

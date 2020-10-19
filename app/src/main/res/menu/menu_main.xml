@@ -3,9 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.shariful.a1xdeposit.MainActivity">
 
+
     <item
         android:id="@+id/admin_panelID"
         android:orderInCategory="100"
         android:title="Admin Panel"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/shareID"
+        android:orderInCategory="100"
+        android:title="Share"
+        android:icon="@drawable/ic_share_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/ratelID"
+        android:orderInCategory="100"
+        android:title="Rate Us"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logoutID"
+        android:orderInCategory="100"
+        android:title="Logout"
         app:showAsAction="never" />
 </menu>

@@ -3,6 +3,7 @@ package com.shariful.a1xdeposit;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,7 +30,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>{
 
@@ -55,6 +58,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         final String pId =depositList.get(position).getpId();
         final String uid= depositList.get(position).getMyUid();
 
+        Calendar calendar = Calendar.getInstance(Locale.getDefault());
+        calendar.setTimeInMillis(Long.parseLong(pId));
+        String pTime = (String) DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
+
+
         holder.userIdTV.setText("User Id: "+depositList.get(position).getUserId());
         holder.amountTv.setText("Ammount: "+depositList.get(position).getAmount());
         holder.currencyTypeTv.setText("Currency Type: "+depositList.get(position).getCurrency_type());
@@ -62,6 +70,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.phoneTv.setText("Phone: "+depositList.get(position).getPhone());
         holder.transactionIdTV.setText("Transaction Id: "+depositList.get(position).getTransactionId());
         holder.statusTv.setText(""+depositList.get(position).getStatus());
+        holder.dateTV.setText(pTime);
+
 
 
 
@@ -142,7 +152,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView userIdTV,amountTv,currencyTypeTv,paymentMethodTv,phoneTv,transactionIdTV,statusTv;
+        TextView userIdTV,amountTv,currencyTypeTv,paymentMethodTv,phoneTv,transactionIdTV,statusTv,dateTV;
         ImageButton moreBtn;
         Button approveBtn;
 
@@ -158,6 +168,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             transactionIdTV = itemView.findViewById(R.id.transactionTvID);
             statusTv =itemView.findViewById(R.id.statusTVID);
             moreBtn = itemView.findViewById(R.id.moreBtnID);
+            dateTV = itemView.findViewById(R.id.dateTvID);
 
         }
     }

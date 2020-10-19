@@ -2,6 +2,7 @@ package com.shariful.a1xdeposit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -48,10 +49,13 @@ public class DepositActivity extends AppCompatActivity {
 
     String myUid;
 
+    String aValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit);
+        setTitle("Deposit Here");
 
         myUid= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -83,6 +87,8 @@ public class DepositActivity extends AppCompatActivity {
         //
 
         retriveTransactionList();
+        retriveAvailablity();
+
 
         depositBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,6 +161,9 @@ public class DepositActivity extends AppCompatActivity {
             transactionET.requestFocus();
             return;
         }
+         if (aValue.equals("4")){
+             Toast.makeText(this, "No Fund Available !!\nTry Again Latter !!", Toast.LENGTH_LONG).show();
+         }
 
         else{
 
@@ -170,7 +179,6 @@ public class DepositActivity extends AppCompatActivity {
             hashMap.put("transactionId",transaction_id);
             hashMap.put("message",message);
             hashMap.put("pId",timeStamp);
-
             hashMap.put("myUid",myUid);
 
             if (tr.getId().contains(transaction_id)){
@@ -209,9 +217,28 @@ public class DepositActivity extends AppCompatActivity {
                 }
             });
 
-
-
         }
+
+    }
+
+    private void retriveAvailablity() {
+
+        DatabaseReference reference =FirebaseDatabase.getInstance().getReference("User");
+        reference.child("available").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    aValue = dataSnapshot.getValue(String.class);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(DepositActivity.this, ""+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
     }
 

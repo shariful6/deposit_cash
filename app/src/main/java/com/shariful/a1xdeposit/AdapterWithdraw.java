@@ -3,6 +3,7 @@ package com.shariful.a1xdeposit;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,8 +31,10 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 
 public class AdapterWithdraw extends RecyclerView.Adapter<AdapterWithdraw.MyViewHolder>{
@@ -54,6 +57,10 @@ public class AdapterWithdraw extends RecyclerView.Adapter<AdapterWithdraw.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
         final String pId =withdrawList.get(position).getpId();
+
+        Calendar calendar = Calendar.getInstance(Locale.getDefault());
+        calendar.setTimeInMillis(Long.parseLong(pId));
+        String pTime = (String) DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
         //get data
         String userId =withdrawList.get(position).getUserId();
         String code =withdrawList.get(position).getCode();
@@ -71,6 +78,7 @@ public class AdapterWithdraw extends RecyclerView.Adapter<AdapterWithdraw.MyView
         holder.currencyTypeTv.setText("Currency Type: "+currencyType);
         holder.phoneTv.setText("Phone: "+phone);
         holder.statusTv.setText(status);
+        holder.dateTv.setText(pTime);
 
 
         holder.approveBtn.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +154,7 @@ public class AdapterWithdraw extends RecyclerView.Adapter<AdapterWithdraw.MyView
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView userIdTV,codeTv,ammountTv,currencyTypeTv,paymentMethodTv,phoneTv,statusTv;
+        TextView userIdTV,codeTv,ammountTv,currencyTypeTv,paymentMethodTv,phoneTv,statusTv,dateTv;
         ImageButton deleteItemBtn;
         Button approveBtn;
 
@@ -162,6 +170,7 @@ public class AdapterWithdraw extends RecyclerView.Adapter<AdapterWithdraw.MyView
             deleteItemBtn =itemView.findViewById(R.id.deleteBtnId_w);
             statusTv =itemView.findViewById(R.id.statusTVID);
             approveBtn =itemView.findViewById(R.id.okBtnID);
+            dateTv =itemView.findViewById(R.id.date);
 
 
         }
